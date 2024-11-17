@@ -1,13 +1,13 @@
 //
-//  Dependencies+ContainerExtension.swift
+//  AuthenticationService.swift
 //  MyWorkout
 //
 //  Created by Sebastian Sciuba on 17/11/2024.
 //
 
-import Foundation
-import Factory
 
-extension Container {
+import Foundation
+
+protocol AuthenticationService {
     
 }
