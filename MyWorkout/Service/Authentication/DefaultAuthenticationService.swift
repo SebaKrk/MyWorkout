@@ -5,10 +5,15 @@
 //  Created by Sebastian Sciuba on 17/11/2024.
 //
 
+import Factory
 import Foundation
 import FirebaseAuth
 
 final class DefaultAuthenticationService: AuthenticationService {
+    
+    // MARK: - Dependencies
+    
+    @LazyInjected(\.userProvider) private var userProvider
     
     // MARK: - Properties
     
@@ -24,10 +29,12 @@ final class DefaultAuthenticationService: AuthenticationService {
     
     func signIn(email: String, password: String) async throws {
         try await auth.signIn(withEmail: email, password: password)
+        userProvider.sendLoginStateDidChangeEvent()
     }
     
     func signOut() async throws {
         try auth.signOut()
+        userProvider.sendLoginStateDidChangeEvent()
     }
     
 }
