@@ -17,8 +17,8 @@ final class LoginViewModel: ObservableObject {
     
     // MARK: - Properties
     
-    @Published var emailValue = "admin@gmail.com"
-    @Published var passwordValue = "admin1234"
+    @Published var emailValue = "test@gmail.com"
+    @Published var passwordValue = "test1234"
     @Published var isLoginProcessUnderway = false
     
     // MARK: - API

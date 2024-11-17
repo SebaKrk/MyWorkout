@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @LazyInjected(\.authenticationService) private var authenticationService
+    
     // MARK: - Properties
     
     @ObservedObject var viewModel = ContentViewModel()
@@ -20,7 +22,7 @@ struct ContentView: View {
         Group {
             if let isUserLoggedIn = viewModel.isUserLoggedIn {
                 if isUserLoggedIn {
-                    Text("zalogowany")
+                    SettingsView(viewModel: SettingsViewModel())
                 } else {
                     LoginView()
                 }
@@ -32,5 +34,5 @@ struct ContentView: View {
             viewModel.start()
         }
     }
-        
+    
 }
