@@ -80,6 +80,33 @@ final class DefaultAuthenticationService: AuthenticationService {
         }
     }
 
+    func signInWithGitHub() async throws {
+        let provider = OAuthProvider(providerID: "github.com")
+        provider.scopes = ["nickname:email"] 
+
+        return try await withCheckedThrowingContinuation { continuation in
+            provider.getCredentialWith(nil) { credential, error in
+                if let error = error {
+                    continuation.resume(throwing: error)
+                    return
+                }
+                
+                guard let credential = credential else {
+                    continuation.resume(throwing: AuthenticationError.loginError)
+                    return
+                }
+                
+                Auth.auth().signIn(with: credential) { authResult, authError in
+                    if let authError = authError {
+                        continuation.resume(throwing: authError)
+                    } else {
+                        continuation.resume()
+                    }
+                }
+            }
+        }
+    }
+
     func signOut() async throws {
         try auth.signOut()
         userProvider.sendLoginStateDidChangeEvent()
