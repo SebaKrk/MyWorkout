@@ -31,4 +31,21 @@ final class LoginViewModel: ObservableObject {
             print("LOGIN ERROR:", error.localizedDescription )
         }
     }
+    
+    func signInWithGoogle() async {
+        do {
+            try await authenticationService.signInWithGoogle()
+        } catch {
+            print("LOGIN ERROR:", error.localizedDescription )
+        }
+    }
+    
+    func signInWithGitHub() async {
+        do {
+            try await authenticationService.signInWithGitHub()
+        } catch {
+            print("LOGIN ERROR:", error.localizedDescription )
+        }
+    }
+
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-
+    
     // MARK: - Properties
     
     @ObservedObject var viewModel = LoginViewModel()
@@ -23,6 +23,8 @@ struct LoginView: View {
             continueButton
             separator
             appleButton
+            googleButton
+            gitHubButton
             Spacer()
         }
         .padding()
@@ -73,9 +75,7 @@ struct LoginView: View {
     @ViewBuilder
     private var continueButton: some View {
         Button {
-            Task {
-                await viewModel.signInWithEmailAndPassword()
-            }
+            Task { await viewModel.signInWithEmailAndPassword() }
         } label: {
             Text("continue".uppercased())
                 .fontWeight(.bold)
@@ -96,8 +96,66 @@ struct LoginView: View {
             HStack {
                 Image(systemName: "apple.logo")
                     .foregroundColor(.black)
+                Spacer().frame(width: 20)
                 Text("Sign in with Apple")
                     .foregroundColor(.black)
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+        }
+        .padding(.horizontal)
+        .disabled(viewModel.isLoginProcessUnderway)
+    }
+    @ViewBuilder
+    private var gitHubButton: some View {
+        Button {
+            Task { await viewModel.signInWithGitHub() }
+        } label: {
+            HStack {
+                if let gitHunImage = UIImage(named: "avatar-placeholder") {
+                    Image(uiImage: gitHunImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25)
+                }
+                Spacer().frame(width: 20)
+                Text("Sign in with GitHub")
+                    .foregroundColor(.black)
+            }
+            .frame(maxWidth: .infinity)
+            .padding()
+            .background(Color.white)
+            .cornerRadius(8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.gray, lineWidth: 1)
+            )
+        }
+        .padding(.horizontal)
+        .disabled(viewModel.isLoginProcessUnderway)
+    }
+    
+    @ViewBuilder
+    private var googleButton: some View {
+        Button {
+            Task { await viewModel.signInWithGoogle() }
+        } label: {
+            HStack {
+                if let googleImage = UIImage(named: "GoogleSignIn") {
+                    Image(uiImage: googleImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25)
+                    Spacer().frame(width: 20)
+                    Text("Sign in with Google")
+                        .foregroundColor(.black)
+                }
             }
             .frame(maxWidth: .infinity)
             .padding()
