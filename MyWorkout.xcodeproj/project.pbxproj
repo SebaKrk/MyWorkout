@@ -13,15 +13,30 @@
 		93880E132CE93690004BC90E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 93880E122CE93690004BC90E /* FirebaseCrashlytics */; };
 		93880E152CE93690004BC90E /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 93880E142CE93690004BC90E /* FirebaseFirestore */; };
 		93880E182CE9D889004BC90E /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 93880E172CE9D889004BC90E /* Factory */; };
+		93B7CA332CEA92B100607F31 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 93B7CA322CEA92B100607F31 /* GoogleSignIn */; };
+		93B7CA352CEA92B100607F31 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 93B7CA342CEA92B100607F31 /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		938480362CE9227E0069AB00 /* MyWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		93B7CA372CEA932500607F31 /* Exceptions for "MyWorkout" folder in "MyWorkout" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 938480352CE9227E0069AB00 /* MyWorkout */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		938480382CE9227E0069AB00 /* MyWorkout */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				93B7CA372CEA932500607F31 /* Exceptions for "MyWorkout" folder in "MyWorkout" target */,
+			);
 			path = MyWorkout;
 			sourceTree = "<group>";
 		};
@@ -35,9 +50,11 @@
 				93880E0B2CE9262A004BC90E /* FirebaseAnalytics in Frameworks */,
 				93880E132CE93690004BC90E /* FirebaseCrashlytics in Frameworks */,
 				93880E112CE93690004BC90E /* FirebaseCore in Frameworks */,
+				93B7CA352CEA92B100607F31 /* GoogleSignInSwift in Frameworks */,
 				93880E182CE9D889004BC90E /* Factory in Frameworks */,
 				93880E152CE93690004BC90E /* FirebaseFirestore in Frameworks */,
 				93880E0F2CE93690004BC90E /* FirebaseAuth in Frameworks */,
+				93B7CA332CEA92B100607F31 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +103,8 @@
 				93880E122CE93690004BC90E /* FirebaseCrashlytics */,
 				93880E142CE93690004BC90E /* FirebaseFirestore */,
 				93880E172CE9D889004BC90E /* Factory */,
+				93B7CA322CEA92B100607F31 /* GoogleSignIn */,
+				93B7CA342CEA92B100607F31 /* GoogleSignInSwift */,
 			);
 			productName = MyWorkout;
 			productReference = 938480362CE9227E0069AB00 /* MyWorkout.app */;
@@ -118,6 +137,7 @@
 			packageReferences = (
 				93880E092CE9262A004BC90E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				93880E162CE9D889004BC90E /* XCRemoteSwiftPackageReference "Factory" */,
+				93B7CA312CEA92B000607F31 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 938480372CE9227E0069AB00 /* Products */;
@@ -280,6 +300,7 @@
 				DEVELOPMENT_TEAM = 8RH4482R36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWorkout/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -313,6 +334,7 @@
 				DEVELOPMENT_TEAM = 8RH4482R36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MyWorkout/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -375,6 +397,14 @@
 				minimumVersion = 2.4.1;
 			};
 		};
+		93B7CA312CEA92B000607F31 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -407,6 +437,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 93880E162CE9D889004BC90E /* XCRemoteSwiftPackageReference "Factory" */;
 			productName = Factory;
+		};
+		93B7CA322CEA92B100607F31 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B7CA312CEA92B000607F31 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		93B7CA342CEA92B100607F31 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 93B7CA312CEA92B000607F31 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
