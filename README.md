@@ -29,3 +29,7 @@ https://github.com/SebaKrk/MyWorkout
 ### IOS-0002 Sign-in providers 
     * A: Add Google SignIn 
     * B: Add sign in with GitHub
+    
+### IOS-0003 AppScreen
+    * A: Create AppScreen and AppTabView
+     - Added localized labels and destinations for each tab in AppScreen

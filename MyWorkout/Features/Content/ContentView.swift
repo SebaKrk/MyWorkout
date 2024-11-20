@@ -15,6 +15,7 @@ struct ContentView: View {
     // MARK: - Properties
     
     @ObservedObject var viewModel = ContentViewModel()
+    @State private var selection: AppScreen? = .activity
     
     // MARK: - View
     
@@ -22,7 +23,7 @@ struct ContentView: View {
         Group {
             if let isUserLoggedIn = viewModel.isUserLoggedIn {
                 if isUserLoggedIn {
-                    SettingsView(viewModel: SettingsViewModel())
+                    AppTabView(selection: $selection)
                 } else {
                     LoginView()
                 }
