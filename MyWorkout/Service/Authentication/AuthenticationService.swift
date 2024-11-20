@@ -11,6 +11,9 @@ protocol AuthenticationService {
     
     /// Method to authenticate the user with `Google`.
     func signInWithGoogle() async throws
+    
+    /// Method to authenticate the user with `Google`.
+    func signInWithGitHub() async throws
 
     /// Method to authenticate the user with `email` and `password`.
     func signIn(email: String, password: String) async throws
