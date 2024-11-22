@@ -23,6 +23,13 @@ final class ContentViewModel: ObservableObject {
     // MARK: - Properties
     
     @Published var isUserLoggedIn: Bool?
+    @Published var isOnboardingCompleted: Bool
+    
+    // MARK: - Lifecycle
+    
+    init(isOnboardingCompleted: Bool = false ) {
+        self.isOnboardingCompleted = isOnboardingCompleted
+    }
     
     // MARK: - API
     

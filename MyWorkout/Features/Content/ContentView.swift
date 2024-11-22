@@ -23,7 +23,11 @@ struct ContentView: View {
         Group {
             if let isUserLoggedIn = viewModel.isUserLoggedIn {
                 if isUserLoggedIn {
-                    AppTabView(selection: $selection)
+                    if viewModel.isOnboardingCompleted {
+                        AppTabView(selection: $selection)
+                    } else {
+                        OnboardingView()
+                    }
                 } else {
                     LoginView()
                 }
