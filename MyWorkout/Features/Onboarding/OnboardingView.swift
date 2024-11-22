@@ -15,42 +15,69 @@ struct OnboardingView: View {
     @Injected(\.healthStore) private var healthStore
     
     @State private var showAlert = false
+    @State private var onboardingState: OnboardingState = .welcome
+    @State private var canProceedToNextStep: Bool = true
+    
+    let transition: AnyTransition = .asymmetric(insertion: .move(edge: .trailing),
+                                                removal: .move(edge: .leading))
     
     var body: some View {
-        authorizeHealthKitButton
-    }
-    
-    private var authorizeHealthKitButton: some View {
-        VStack {
-            Button {
-                if healthStore.isHealthDataAvailable {
-                    Task {
-                        let result = await healthStore.requestAuthorizationForBodyCompositionTypes()
-                        switch result {
-                        case .success:
+        ZStack {
+            ZStack {
+                switch onboardingState {
+                case .welcome:
+                    welcomeView
+                        .transition(transition)
+                case .bodyComposition:
+                    OnboardingBodyMassView(canProceedToNextStep: $canProceedToNextStep)
+                        .transition(transition)
+                case .activityAndHealth:
+                    OnboardingActivityAndHealthView(canProceedToNextStep: $canProceedToNextStep)
+                        .transition(transition)
+                case .end:
+                    Text("End")
+                        .transition(transition)
+                        .onAppear() {
                             appStorage.completeOnboarding()
-                        case .failure(let error):
-                            print("Authorization failed with error: \(error.localizedDescription)")
-                            
                         }
-                    }
-                } else {
-                    showAlert.toggle()
                 }
-            } label: {
-                if healthStore.isHealthDataAvailable {
-                    Label("Authorize HealthKit Access -  Body Composition Types", systemImage: "figure.run")
-                } else {
-                    Text("Health Data Available")
+            }
+            VStack {
+                Spacer()
+                if canProceedToNextStep {
+                    nextButton
                 }
             }
         }
-        .alert("Information", isPresented: $showAlert) {
-            Button("OK", role: .cancel) { }
-        } message: {
-            Text("Your device cannot fetch data from HealthKit. Please ensure HealthKit is enabled and try again.")
+    }
+    
+    private var welcomeView: some View {
+        Text("Welcome to the HealthKit Demo")
+            .font(.title)
+            .padding()
+    }
+    
+    private var nextButton: some View {
+        Button {
+            handleNextButton()
+        } label: {
+            if onboardingState.rawValue == 3 {
+                Label("Finish", systemImage: "arrow.right")
+            } else  {
+                Label("Next", systemImage: "arrow.right")
+            }
+            
         }
         
     }
     
+    private func handleNextButton() {
+        withAnimation {
+            if let nextState = onboardingState.next {
+                onboardingState = nextState
+                canProceedToNextStep = false 
+            }
+        }
+    }
+        
 }

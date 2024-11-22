@@ -36,6 +36,9 @@ https://github.com/SebaKrk/MyWorkout
     * B: AppStorage
      - create AppStorage manager 
 
-### IOS-0003 HealthKit
+### IOS-0004 HealthKit
     * A: Add HealthKit Capability 
     - allows an app to read and write health and activity user data that appears in the Health app.
+    - OnboardingBodyMassView
+    - OnboardingActivityAndHealthView
+
