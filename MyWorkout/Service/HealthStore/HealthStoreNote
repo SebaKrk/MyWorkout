@@ -1,0 +1,59 @@
+
+Aktywność fizyczna i energia
+
+1.    .activeEnergyBurned – Spalona energia aktywna (np. kalorie).
+2.    .basalEnergyBurned – Spalona energia podstawowa (kalorie w spoczynku).
+3.    .distanceWalkingRunning – Dystans pokonany pieszo lub biegiem.
+4.    .distanceCycling – Dystans pokonany na rowerze.
+5.    .distanceSwimming – Dystans przepłynięty podczas pływania.
+6.    .distanceWheelchair – Dystans pokonany na wózku inwalidzkim.
+7.    .flightsClimbed – Liczba pokonanych pięter (np. po schodach).
+8.    .stepCount – Liczba kroków wykonanych przez użytkownika.
+9.    .pushCount – Liczba pchnięć (dla wózków inwalidzkich).
+10.    .swimmingStrokeCount – Liczba ruchów pływackich.
+
+Czynności życiowe
+
+11.    .heartRate – Tętno (bicia serca na minutę).
+12.    .restingHeartRate – Tętno spoczynkowe.
+13.    .walkingHeartRateAverage – Średnie tętno podczas chodzenia.
+14.    .heartRateVariabilitySDNN – Zmienność rytmu serca (SDNN).
+15.    .respiratoryRate – Częstotliwość oddechu (oddechy na minutę).
+16.    .vo2Max – Maksymalny pobór tlenu (VO2 max).
+17.    .oxygenSaturation – Nasycenie tlenem (%).
+18.    .bloodPressureSystolic – Ciśnienie tętnicze skurczowe.
+19.    .bloodPressureDiastolic – Ciśnienie tętnicze rozkurczowe.
+20.    .bodyTemperature – Temperatura ciała.
+21.    .electrodermalActivity – Aktywność elektrodermalna (np. poziom stresu).
+22.    .bloodGlucose – Poziom glukozy we krwi.
+23.    .bloodAlcoholContent – Zawartość alkoholu we krwi.
+24.    .peripheralPerfusionIndex – Wskaźnik perfuzji obwodowej.
+
+Skład ciała
+
+25.    .bodyMass – Masa ciała.
+26.    .bodyMassIndex – Wskaźnik masy ciała (BMI).
+27.    .leanBodyMass – Beztłuszczowa masa ciała.
+28.    .bodyFatPercentage – Procent tłuszczu w ciele.
+
+
+Odżywianie i nawodnienie
+
+29.    .dietaryEnergyConsumed – Energia spożyta (kalorie).
+30.    .dietaryCarbohydrates – Spożyte węglowodany.
+31.    .dietaryProtein – Spożyte białko.
+32.    .dietaryFatTotal – Spożyte tłuszcze całkowite.
+33.    .dietaryFatSaturated – Spożyte tłuszcze nasycone.
+34.    .dietaryCholesterol – Spożyty cholesterol.
+35.    .dietarySodium – Spożyty sód.
+36.    .dietaryPotassium – Spożyty potas.
+37.    .dietaryFiber – Spożyty błonnik.
+38.    .dietarySugar – Spożyty cukier.
+39.    .dietaryWater – Spożyta woda.
+40.    .dietaryCaffeine – Spożyta kofeina.
+
+Inne
+
+41.    .appleExerciseTime – Czas ćwiczeń zarejestrowany przez Apple Watch.
+42.    .appleStandTime – Czas spędzony na staniu.
+43.    .uvExposure – Ekspozycja na promieniowanie UV.

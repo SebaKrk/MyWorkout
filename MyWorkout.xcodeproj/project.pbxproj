@@ -22,7 +22,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		93B7CA372CEA932500607F31 /* Exceptions for "MyWorkout" folder in "MyWorkout" target */ = {
+		93EA51062CF0CFC000EFD45B /* Exceptions for "MyWorkout" folder in "MyWorkout" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
@@ -35,8 +35,11 @@
 		938480382CE9227E0069AB00 /* MyWorkout */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				93B7CA372CEA932500607F31 /* Exceptions for "MyWorkout" folder in "MyWorkout" target */,
+				93EA51062CF0CFC000EFD45B /* Exceptions for "MyWorkout" folder in "MyWorkout" target */,
 			);
+			explicitFileTypes = {
+				Service/HealthStore/HealthStoreNote = net.daringfireball.markdown;
+			};
 			path = MyWorkout;
 			sourceTree = "<group>";
 		};
@@ -294,10 +297,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyWorkout/MyWorkout.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyWorkout/Preview Content\"";
-				DEVELOPMENT_TEAM = A5L2HU2966;
+				DEVELOPMENT_TEAM = 8RH4482R36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyWorkout/Info.plist;
@@ -328,10 +332,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MyWorkout/MyWorkout.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MyWorkout/Preview Content\"";
-				DEVELOPMENT_TEAM = A5L2HU2966;
+				DEVELOPMENT_TEAM = 8RH4482R36;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MyWorkout/Info.plist;

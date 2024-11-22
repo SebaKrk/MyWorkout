@@ -35,3 +35,7 @@ https://github.com/SebaKrk/MyWorkout
      - Added localized labels and destinations for each tab in AppScreen
     * B: AppStorage
      - create AppStorage manager 
+
+### IOS-0003 HealthKit
+    * A: Add HealthKit Capability 
+    - allows an app to read and write health and activity user data that appears in the Health app.

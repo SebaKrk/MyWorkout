@@ -50,5 +50,9 @@ extension Container {
         Factory(self) { DefaultAppStorage() }
     }
     
+    var healthStore: Factory<HealthStore> {
+        Factory(self) { DefaultHealthStore() }
+    }
+    
 }
 
