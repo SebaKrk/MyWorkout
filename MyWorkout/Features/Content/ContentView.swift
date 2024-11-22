@@ -22,7 +22,11 @@ struct ContentView: View {
         Group {
             if let isUserLoggedIn = viewModel.isUserLoggedIn {
                 if isUserLoggedIn {
-                    SettingsView(viewModel: SettingsViewModel())
+                    if viewModel.isOnboardingCompleted {
+                        OnboardingView()
+                    } else {
+                        SettingsView(viewModel: SettingsViewModel())
+                    }
                 } else {
                     LoginView()
                 }
