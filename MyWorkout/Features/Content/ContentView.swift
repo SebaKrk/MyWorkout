@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     
     @LazyInjected(\.authenticationService) private var authenticationService
+    @Injected(\.appStorage) private var appStorage
     
     // MARK: - Properties
     
@@ -23,7 +24,7 @@ struct ContentView: View {
         Group {
             if let isUserLoggedIn = viewModel.isUserLoggedIn {
                 if isUserLoggedIn {
-                    if viewModel.isOnboardingCompleted {
+                    if appStorage.hasCompletedOnboarding {
                         AppTabView(selection: $selection)
                     } else {
                         OnboardingView()

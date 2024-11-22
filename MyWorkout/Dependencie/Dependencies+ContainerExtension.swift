@@ -45,5 +45,10 @@ extension Container {
         Factory(self) { UserProvider() }.shared
     }
     
+    ///
+    var appStorage: Factory<AppStorageProtocol> {
+        Factory(self) { DefaultAppStorage() }
+    }
+    
 }
 

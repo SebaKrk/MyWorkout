@@ -33,3 +33,5 @@ https://github.com/SebaKrk/MyWorkout
 ### IOS-0003 AppScreen
     * A: Create AppScreen and AppTabView
      - Added localized labels and destinations for each tab in AppScreen
+    * B: AppStorage
+     - create AppStorage manager 
